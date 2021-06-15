@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link href="Cadastro.css" rel="stylesheet" />
+<title>Projeto Amiko</title>
+<script type="text/javascript" src="Cadastro.js"></script>
+
+<style>
+    #listaRegistros{ display: none; }
+        #cadastroRegistros{
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+        }
+        body[page=lista] #listaRegistros{ display: block; }
+        body[page=cadastro] #cadastroRegistros{ display: flex; }
+</style>
+
+</head>
+    <header>
+        <div class="center">
+            <div class="logo"><label>amiko</label><label class="logo-orange">soluções</label></div>
+            <div class="menu">
+                <a href="Inicio.html">Home</a> 
+                <a href="#">Contabilidade</a> 
+                <a href="#">Notificações</a>
+                <a href="#">Hospitais</a>  
+                <a class="btn-menu" href="Cadastro.html">Cadastrar</a> 
+            </div>
+        </div>
+    </header>
+
+<body page='lista'>  
+
+    <div id='listaRegistros'>
+        <div style='display: flex;'>
+            <input class="search2" style='flex:1' placeholder="Pesquisar ID, modelo, quarto ou hospital..." autofocus id='inputPesquisa' />
+        </div>
+        <table>
+           <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Modelo</th>
+                  <th>Quarto</th>
+                  <th>Hospital</th>
+                  <th></th>
+               </tr>
+           </thead> 
+           <tbody id='listaRegistrosBody'></tbody>
+        </table>
+
+        <div><button class="add" onclick="visualizar('cadastro', true)">Adicionar dispositivos</button></div>
+
+    </div>
+
+    <form id='cadastroRegistros'>
+
+        <div class='label'>
+            <div>ID:</div>
+            <div><input id='id' type='number' placeholder="Digite aqui..."></div>
+        </div>
+
+        <div class='label'>
+            <div>Modelo:</div>
+            <div><input id='modelo' type='text' placeholder="Digite aqui..."></div>
+        </div>
+
+        <div class='label'>
+            <div>Quarto:</div>
+            <div><input id='quarto' type='number' placeholder="Digite aqui..."></div>
+        </div>
+
+        <div class='label'>
+            <div>Hospital:</div>
+            <div><input id='hospital' type='text' placeholder="Digite aqui..."></div>
+        </div>
+
+        <div>
+            <button class="save">Salvar</button>
+            <button onclick="visualizar('lista')" class="cancel" type='button'>Cancelar</button>
+        </div>
+
+    </form>
+    
+</body>
+</html>
